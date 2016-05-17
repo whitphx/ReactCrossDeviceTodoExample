@@ -8,6 +8,12 @@ import {
   ListView,
 } from 'react-native'
 
+const styles = StyleSheet.create({
+  container: {
+    marginTop: 38
+  }
+})
+
 export default class extends Component {
   constructor(props) {
     super(props)
@@ -36,7 +42,7 @@ export default class extends Component {
     } = this.props
 
     return (
-      <View>
+      <View style={styles.container}>
         <ListView
           dataSource={this.state.ds}
           renderRow={(rowData) => <Text>{ rowData.text }</Text>}
@@ -45,9 +51,11 @@ export default class extends Component {
           style={{height: 40, borderColor: 'gray', borderWidth: 1}}
           onChangeText={addTodoText => this.setState({addTodoText})}
           value={this.state.addTodoText}
+          ref='addTodoText'
         />
         <Text onPress={() => {
           addTodo(this.state.addTodoText)
+          this.refs.addTodoText.clear()
         }}>ADD</Text>
       </View>
     )

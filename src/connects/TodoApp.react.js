@@ -3,7 +3,7 @@ import {
   addTodo,
 } from '../actions'
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
   return {
     todos: state.todos,
   }
