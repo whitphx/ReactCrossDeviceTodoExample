@@ -51,11 +51,10 @@ export default class extends Component {
           style={{height: 40, borderColor: 'gray', borderWidth: 1}}
           onChangeText={addTodoText => this.setState({addTodoText})}
           value={this.state.addTodoText}
-          ref='addTodoText'
         />
         <Text onPress={() => {
           addTodo(this.state.addTodoText)
-          this.refs.addTodoText.clear()
+          this.setState({addTodoText: ''})
         }}>ADD</Text>
       </View>
     )
