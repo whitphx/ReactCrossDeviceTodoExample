@@ -15,11 +15,11 @@ export default React.createClass({
         )}
         </ul>
 
+        <input type="text" ref='todo_text'/>
         <button onClick={() => {
           addTodo(this.refs.todo_text.value)
           this.refs.todo_text.value = ''
         }}>ADD</button>
-        <input type="text" ref='todo_text'/>
       </div>
     )
   }
