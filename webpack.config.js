@@ -1,5 +1,4 @@
 var path = require('path')
-var webpack = require('webpack')
 
 module.exports = {
   entry: [
@@ -26,10 +25,5 @@ module.exports = {
     contentBase: './public',
     port: 8080,
     inline: true,
-  },
-  plugins: [
-    new webpack.DefinePlugin({
-      WEB: true,
-    })
-  ]
+  }
 }
